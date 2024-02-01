@@ -1,0 +1,18 @@
+let y: number = 200;
+let z: number = 300;
+
+const obj: object = {
+	x: 100,
+	y,
+	z,
+	complex: {
+		test: 666
+	}
+};
+
+
+asd
+
+//y + z // Fix this error later
+//1 + 1
+
