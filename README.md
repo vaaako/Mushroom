@@ -61,29 +61,29 @@ let z = x * y;
 
 # Compiling and Running
 ## Requirements
-You need `clang` and `Cmake` *(optional)*
+You need `clang`, `Cmake` *(optional)* and gnu `readline` library
+
+If you want to debug also install `gdb` and [`Valgrind`](https://valgrind.org/)
 ```sh
-sudo apt install clang cmake
+sudo apt install clang cmake libreadline-dev
+```
+
+```sh
+sudo pacman -S clang cmake readline
 ```
 
 ## gcc/clang
 ```sh
-clang++ -std=c++20 -g -O0 -Wall -Qunused-arguments -Werror -Wextra -Wno-sign-compare -Wno-unused-parameter -Wno-unused-variable -Wshadow src/*.cpp src/**/*.cpp -o lunarbat
+clang++ -std=c++20 -O3 -lreadline src/*.cpp src/*/*.cpp -o mushroom
 ```
 
 
 ## CMake
-Setup the `CMake` environment
 ```sh
-mkdir build
-cmake -S . -B build
+mkdir build         # Make build folder
+cmake -S . -B build # Set up
+cmake --build build # Compile
 ```
-
-Now you can run
-```sh
-cmake --build build
-```
-
 
 ## SHELL FILE
 Alternativally you can use the shell file `run.sh` to automatically compile and run
@@ -98,7 +98,7 @@ Or run with `CMake`
 bash run.sh -c
 ```
 
-You can also open `gdb` right after running
+You can also open `gdb` right after compiling
 ```sh
 bash run.sh -d
 ```
@@ -114,7 +114,8 @@ Made by me<br>
 Inspired by [Daniel Holden](https://github.com/orangeduck), [Matthew Oros](https://github.com/orosmatthew), [Mika](https://github.com/mikumikudice), [David Callanan](https://github.com/davidcallanan) and [Tyler Laceby](https://github.com/tlaceby) 
 
 ## Libraries used
-- [`editline`](https://github.com/troglobit/editline)
+- [`readline`](https://github.com/JuliaAttic/readline/tree/master)
+	+ Alternative: [`editline`](https://github.com/troglobit/editline)
 
 ---
 >I'm still learning about `Interpreters` and `C++`, so please let me know if

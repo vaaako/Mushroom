@@ -3,7 +3,7 @@ CXXFLAGS = -std=c++20 -O3
 DEVFLAGS =  -g -fdiagnostics-color=always -Wextra -Wall -Wuninitialized -Winit-self -Wfloat-equal -Wundef -Wpointer-arith -Wcast-align -Wstrict-overflow=5 -Wwrite-strings -Wcast-qual -Wswitch-default -Wconversion -Wunreachable-code
 
 EDITLINE = $(wildcard includes/*.h)
-LIBS     = -lstdc++ -leditline
+LIBS     = -lstdc++ -lreadline
 
 SRC_DIR = src
 SRC_FILES = $(wildcard $(SRC_DIR)/*.cpp) $(wildcard $(SRC_DIR)/**/*.cpp)
