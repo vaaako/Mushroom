@@ -1,16 +1,23 @@
-# Lunarbat 🦇
+# Mushroom 🍄
 Yet another attempt of making a programming language.
- Lunarbat is my Hobby Programming language, making just for learning and fun.
+ **Mushroom** is my Hobby Programming language, making just for learning and fun.
 
+<!--
 This is just the name of the project, because I didn't choose a good name yet.
  It is called Lunarbat because the bat 🦇 is my favorite animal and the name **BAT**
  was alredy in use
+-->
+
+It is called **Mushroom** because I like fungus a lot. The previous name was *Lunarbat*,
+ but I thought this name didn't suit a programming language name, so I changed
 
 It started as [`Batlang`](https://github.com/vaaako/batlang) but I decide to remake everything
  from scratch, because I was no satisfied with how it was going
 
+>Times I refactored the entire code logic: `3`
+
 # Current State
-**Lunarbat** is in very early stage and isn't usable yet
+**Mushroom** is in very early stage and isn't usable yet
 
 # Goal
 ### May have changes
@@ -33,10 +40,11 @@ func can_drink(x: int): string {
 
 
 // The object declaration and usage will have changes, this is just an example
-const person: Object = {
+let my_name: string = "John"
+const person: obj = {
 	info = {
-		name: string = "John",
-		age: int = 17
+		my_name, // Use existent variable
+		age: int = 17 // Make variable inside obj
 	}
 
 	alive: bool = true
@@ -121,4 +129,4 @@ Inspired by [Daniel Holden](https://github.com/orangeduck), [Matthew Oros](https
 >I'm still learning about `Interpreters` and `C++`, so please let me know if
  I made any mistakes or if you have any suggestions
 
->If you want to see my notes, see `TODO.md`
+>If you want to see my notes, see `lunarbat-devlog.md` and `TODO.md`
