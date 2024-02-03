@@ -1,18 +1,9 @@
-let y: number = 200;
-let z: number = 300;
+let x: number = null;
+let y: bool = true;
 
-const obj: object = {
+const test: obj = {
 	x: 100,
-	y,
-	z,
-	complex: {
-		test: 666
-	}
+	y
 };
 
-
-asd
-
-//y + z // Fix this error later
-//1 + 1
-
+let z: number = 321;

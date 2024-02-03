@@ -1,7 +1,7 @@
 #include "../headers/parser.hpp"
 #include "../headers/error.hpp"
+#include <cstdio>
 #include <stdexcept>
-#include <sys/types.h>
 
 /* 
 	Orders of Prescidence
@@ -18,7 +18,7 @@
 
 
 /**
- * TODO Explain
+ * TODO -- Explain
  * 
  * When a error occurs it returns a nullptr and set "error" to the error message
  * When the main loop ends, it also returns a nullptr, so always check if parser has a error when returning a nullptr
@@ -33,36 +33,6 @@ Parser::Parser(Lexer* lexer, File& file) : lexer(lexer), file(file) {
 	this->init_tokens();
 }
 
-// const Response<const Program*> Parser::make_AST(File& file) {
-// 	Response<const Program*> response = Response<const Program*>();
-// 	Program* program = new Program();
-	
-// 	// Parse until the end of file (EOF)
-// 	try {
-// 		while(this->not_eof()) {
-// 			program->insert(this->parse_stmt());
-
-// 			this->advance();
-// 		}
-// 	} catch (std::runtime_error& e) {
-// 		response.had_error(Error::make_error(Error::Type::InvalidSyntaxError,
-// 			e.what(),
-// 			file
-// 		));
-
-// 		return response;
-// 	}
-
-
-// 	// Both will have EOF as token
-// 	delete this->cToken;
-// 	this->cToken = nullptr;
-// 	delete nToken;
-// 	this->nToken = nullptr;
-
-// 	response.set_value(program);
-// 	return response;
-// }
 
 
 const Statement* Parser::make_AST() {
@@ -75,11 +45,11 @@ const Statement* Parser::make_AST() {
 		return stmt;
 	}
 
-	// // Both will have EOF as token
-	// delete this->cToken;
-	// delete this->nToken;
-	// this->cToken = nullptr;
-	// this->nToken = nullptr;
+	// cToken and nToken will have EOF as token
+	// I could delete here, but it would be a wall
+
+	delete this->lexer; // Not used anymore
+	this->lexer = nullptr;
 
 	return stmt;
 }
@@ -155,7 +125,6 @@ const Statement* Parser::parse_var_declaration() {
 
 	const ValueType valueType = valueTypeMap.at(this->cToken->value);
 	this->advance();
-
 
 	// LET IDENT: TYPE; <- This case
 	if(this->expected(TokenType::Semicolon)) {

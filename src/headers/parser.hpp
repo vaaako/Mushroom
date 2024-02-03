@@ -22,6 +22,9 @@ class Parser {
 	
 			if(this->nToken != nullptr)
 				delete this->nToken;
+
+			if(this->lexer != nullptr)
+				delete lexer;
 		}
 
 		// const Response<const Program*> make_AST(File& file);
@@ -33,14 +36,6 @@ class Parser {
 			// Init Tokens
 			this->cToken = this->lexer->tokenize(); 
 			this->nToken = this->lexer->tokenize();
-
-			// if(this->cToken == nullptr || this->nToken == nullptr) {
-				// Since I don't know wich cause the error, delete both
-				// delete cToken;
-				// delete nToken;
-
-				// throw std::runtime_error("INIT Invalid token value");
-			// }
 		}
 
 		inline bool has_error() {
@@ -63,7 +58,7 @@ class Parser {
 			{ "nil",   ValueType::Null }, // TODO -- Test only
 			{ "number", ValueType::Number }, // TODO -- Make int and float support later
 			{ "bool",   ValueType::Boolean },
-			{ "object",   ValueType::Object }
+			{ "obj",   ValueType::Object }
 		};
 
 		const Statement* parse_stmt();
@@ -112,7 +107,6 @@ class Parser {
 		inline std::nullptr_t set_error(const std::string& message) {
 			this->error = Error::make_error(Error::Type::InvalidSyntaxError,
 				message, this->file);
-
 			return nullptr;
 		}
 
@@ -121,15 +115,6 @@ class Parser {
 
 			this->cToken = this->nToken; // Get "current" token
 			this->nToken = this->lexer->tokenize();
-
-			// If get an invalid token
-			// if(this->nToken == nullptr) {
-				// if(this->cToken != nullptr)
-				// delete this->cToken;
-				// throw std::runtime_error("ADVANCE Invalid token value");
-			
-				// response.had_error("Invalid Token value");
-			// }
 		}
 
 		inline void advance_twice() {

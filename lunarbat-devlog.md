@@ -685,3 +685,35 @@ Eu descobri que não preciso abortar a criação das tokens assim que tiver um t
 Eu estou implementando isso e tentando também o *Lazy Interpreter*, mas ainda estou
  voltando aos poucos pra esse projeto, é um projeto que me demanda bastante mentalidade
  e cansa bastante, mas ainda quero terminar ele
+
+
+# Day 21
+Acho que consegui fazer um sistem de *handle errors* melhor, baseado em *nullptr*,
+ se um método tiver um erro, ele seta um valor na classe com a mensagem do erro e continua a execução,
+ até chegar no fim *(No interpreter)*, o interpreter checa se o *Parser* teve algum
+ erro e se tiver ele retorna *nullptr* como valor, então na função principal é exibida
+ a mensagem de erro
+
+A desvantagem desse método é que só será exibido o último erro ocorrido *(Invés do primeiro)*,
+ podendo ter algumas mensagens de erro confusas em alguns casos, mas acho que desse jeito
+ fica bem melhor de programar e lidar do que o sistem de *try-catch* de antes
+
+# Day 22
+Acho que finalmente consegui, consegue resolver todos os bugs que tinham
+
+Isso foi uma aventura
+
+Começou com eu tentando fazer os objetos funcionarem por dias, então eu
+
+- Re-visitei o código inteiro resolvendo algumas coisas que não tinha visto antes
+- Refatorei a lógica *Environment*
+	+ Consegui finalmente corrigir o bug dos objetos depois de dias
+- Refatorei o sistema de posição
+- Refatorei o *Lexer*
+- Refatorei o *Parser*
+- Refatorei o *Interpreter*
+- Refatorei o sistema de *Error Handler*
+
+*(o error handler ainda tem um pequeno bug de não mostrar a mensagem direito corretamente, mas isso eu resolvo depois)*
+
+Finalmente isso terminou e posso adicionar features novas

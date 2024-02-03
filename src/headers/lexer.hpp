@@ -21,7 +21,7 @@ class Lexer {
 		};
 
 		const std::unordered_set<std::string> valueTypeSet = {
-			"nil", "number", "bool", "object"
+			"nil", "number", "bool", "obj"
 		};
 
 		const std::unordered_set<char> operatorSet = { '+', '-', '/', '*', '^', '%', '>', '<' };

@@ -32,39 +32,19 @@ bool Mushroom::run(const std::string& source) const {
 	/**
 	 * PARSER */
 	Parser* parser = new Parser(lexer, *file);
-	// const Response<const Program*> pResponse = parser->make_AST(*file);
-
-
-
-	// // Check error
-	// if(pResponse.has_error) {
-	// 	std::cout << pResponse.errorMessage << std::endl;
-
-	// 	delete file;
-	// 	delete parser;
-	// 	delete env;
-
-	// 	return false;
-	// }
-	// const Program* nodes = pResponse.value; // Just an alias
-
-
+	
 	/**
 	 * INTERPRETER */
 	Interpreter* interpreter = new Interpreter(parser, env, *file);
-	// const RuntimeVal* value = 
 
 	// Check error
-	const Response<const RuntimeVal*> response = interpreter->eval_stmt();
-
-	if(response.has_error) {
-		std::cout << response.errorMessage << std::endl;
+	const RuntimeVal* value = interpreter->eval_stmt();
+	if(interpreter->has_error()) {
+		std::cout << interpreter->get_error() << std::endl;
 
 		delete file;
-		delete lexer;
-		delete parser;
 		delete env;
-		delete interpreter;
+		delete interpreter; // Lexer and parser deleted here
 
 		return false;
 	}
@@ -73,20 +53,17 @@ bool Mushroom::run(const std::string& source) const {
 	// DEBUG ONLY //
 	if(this->debug) {
 		// std::cout << Debug::program(*AST_program.value) << std::endl;
-		std::cout << Debug::value(*response.value) << std::endl;
+		std::cout << Debug::value(*value) << std::endl;
 		// std::cout << Debug::env(*env) << std::endl;
 	}
 	// DEBUG ONLY //
 
 	delete file;
 
-	delete lexer;
-	delete parser;
-
 	delete env;
-	delete interpreter;
+	delete interpreter; // Lexer and parser deleted here
+	delete value;
 
-	delete response.value;
 
 	return true;
 }

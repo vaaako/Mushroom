@@ -68,19 +68,19 @@
 > ^ It a bit confusing, but works
 
 
-- [ ] Change `expected` on `parser`
+- [X] Change `expected` on `parser`
 
 - [ ] Pow support
 	+ More priority than Mul
 	+ Not that hard to implement I think, just add `parse_pow_expr` and add it to `parse_add_expr`
 
-- [ ] Put type check from `interpreter.cpp` to `envrionment.cpp`
+- ~ [-] Put type check from `interpreter.cpp` to `envrionment.cpp` ~
 
 - [ ] Semicolon support
 
 - [ ] Int and Float support
 
-- [ ] Optimize `lunarbat.cpp`
+- [X] Optimize `lunarbat.cpp`
 
 
 # Stuff I can do later
@@ -100,14 +100,16 @@
 
 - [ ] Make type safe on var declaration
 
-- [ ] In `envrionment.cpp` make position be a reference?
+- ~ [ ] In `envrionment.cpp` make position be a reference? ~
+> ^ Not using position anymore, and yes, the new one is a reference
 
-- [ ] In parser check if trying to assing or declare a global variable
+- [ ] In parser check if is trying to assing or declare a global variable
 	+ Currently this will throw an error from interpreter
+
+- ~ [ ] `obj.y` -> check if exists inside of object -> if not, check if is a variable on envrionment -> if not, error ~
+	~ + This will avoid the clone to inside ObjectVal ~
+	~ + But I think it can also cause some errors, but I can test it later ~
+> ^ Solved
 
 - [ ] Make possible to make a executable file
 	+ `lunarbat -e main.lb` -> `./main`
-
-- [ ] `obj.y` -> check if exists inside of object -> if not, check if is a variable on envrionment -> if not, error
-	+ This will avoid the clone to inside ObjectVal
-	+ But I think it can also cause some errors, but I can test it later
