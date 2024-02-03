@@ -2,5 +2,6 @@ build/
 
 # Sublime
 *.sublime*
+vgcore.*
 
 mushroom

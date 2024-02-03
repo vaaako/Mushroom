@@ -31,8 +31,8 @@
 
 
 
-- ~ [?] Lunarbat errors on `parser.cpp` don't show **filename** and return only half of the error content ~
-	+ ~ ??? ~
+- ~[?] Lunarbat errors on `parser.cpp` don't show **filename** and return only half of the error content~
+	+ ~???~
 > ^ Almost sure the error solved itself (computer magic)
 
 
@@ -74,7 +74,7 @@
 	+ More priority than Mul
 	+ Not that hard to implement I think, just add `parse_pow_expr` and add it to `parse_add_expr`
 
-- ~ [-] Put type check from `interpreter.cpp` to `envrionment.cpp` ~
+- ~[-] Put type check from `interpreter.cpp` to `envrionment.cpp`~
 
 - [ ] Semicolon support
 
@@ -84,31 +84,31 @@
 
 
 # Stuff I can do later
-- ~ [-] Change lexer while-loop to for-loop? ~
-	+ ~ `for(char ch : source)` ~
-	+ ~ I think the speed doens't changes, so a `for-loop` might be a better choice ~
+- ~[-] Change lexer while-loop to for-loop?~
+	+ ~`for(char ch : source)`~
+	+ ~I think the speed doens't changes, so a `for-loop` might be a better choice~
 > ^ Forget it, I need the while-loop, because some statements I need to start a new loop (continue) but not advance the character
 
-- ~ [-] Use `stack-allocation` to store variables ~
-	+ ~ I tested and I got the same time for `stack-allocation` and `hash-map` ~
+- ~[-] Use `stack-allocation` to store variables~
+	+ ~I tested and I got the same time for `stack-allocation` and `hash-map`~
 
-- ~ [ ] See if `std::vector<const Token*>` does some change *(instead of alloc the vector itself)* ~
-	~ + Or `std::vector<const Token&>`? ~
-	~ + I don't know if this would work ~
+- ~[ ] See if `std::vector<const Token*>` does some change *(instead of alloc the vector itself)*~
+	+ ~Or `std::vector<const Token&>`?~
+	+ ~I don't know if this would work~
 > ^ Maybe this wouldn't work because I need vector to be a pointer so I can delete the tokens inside
 > and this would cause to clone the vector twice, on returning and on passing to parser
 
 - [ ] Make type safe on var declaration
 
-- ~ [ ] In `envrionment.cpp` make position be a reference? ~
+- ~[ ] In `envrionment.cpp` make position be a reference?~
 > ^ Not using position anymore, and yes, the new one is a reference
 
 - [ ] In parser check if is trying to assing or declare a global variable
 	+ Currently this will throw an error from interpreter
 
-- ~ [ ] `obj.y` -> check if exists inside of object -> if not, check if is a variable on envrionment -> if not, error ~
-	~ + This will avoid the clone to inside ObjectVal ~
-	~ + But I think it can also cause some errors, but I can test it later ~
+- [ ] `obj.y` -> check if exists inside of object -> if not, check if is a variable on envrionment -> if not, error
+	+ ~This will avoid the clone to inside ObjectVal
+	+ ~But I think it can also cause some errors, but I can test it later
 > ^ Solved
 
 - [ ] Make possible to make a executable file

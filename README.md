@@ -129,4 +129,4 @@ Inspired by [Daniel Holden](https://github.com/orangeduck), [Matthew Oros](https
 >I'm still learning about `Interpreters` and `C++`, so please let me know if
  I made any mistakes or if you have any suggestions
 
->If you want to see my notes, see `lunarbat-devlog.md` and `TODO.md`
+>If you want to see my notes, see `lunarbat-devlog.md` and `todo.md`
