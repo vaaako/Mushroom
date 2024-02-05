@@ -1,5 +1,5 @@
-#include "../headers/parser.hpp"
-#include "../headers/error.hpp"
+#include "../headers/parsing/parser.hpp"
+#include "../headers/helpers/error.hpp"
 #include <cstdio>
 #include <stdexcept>
 

@@ -3,8 +3,8 @@
 #include <array>
 #include <string>
 #include <unordered_map>
-#include "node.hpp"
-#include "token.hpp"
+#include "../types/node.hpp"
+#include "../types/token.hpp"
 
 // const std::array<std::string, 15> tokenTypes = { "EndOfFile", "Number", "Identifier", "Equals", "Colon", "Comma", "Operator", "DoubleQuotes", "Semicolon", "OpenParen", "CloseParen", "OpenParen", "CloseCurly", "Keyword", "TypeKeyword" };
 const std::array<std::string, 16> tokenTypes = { "Invalid", "EndOfFile", "Number", "Identifier", "Equals", "Colon", "Comma", "Operator", "DoubleQuotes", "Semicolon", "OpenParen", "CloseParen", "OpenParen", "CloseCurly", "Keyword", "TypeKeyword" };

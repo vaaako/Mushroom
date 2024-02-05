@@ -1,4 +1,4 @@
-#include "../headers/lexer.hpp"
+#include "../headers/parsing/lexer.hpp"
 
 Lexer::Lexer(File& file) : file(file) {
 	this->source = file.source;

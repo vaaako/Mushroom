@@ -1,10 +1,10 @@
 #pragma once
 
 #include "environment.hpp"
-#include "error.hpp"
-#include "node.hpp"
-#include "parser.hpp"
-#include "values.hpp"
+#include "../helpers/error.hpp"
+#include "../types/node.hpp"
+#include "../parsing/parser.hpp"
+#include "../types/values.hpp"
 
 class Interpreter {
 	public:

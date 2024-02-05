@@ -35,11 +35,6 @@ enum class TokenType {
 struct Token {
 	const TokenType type;
 	const std::string value;
-	// const Position pos_start;
-	// Position pos_end; // Not const because it need to advance on constructor
 
 	Token(const TokenType type, const std::string& value);
-	// Token(const TokenType type, const std::string& value, const Position& pos_start);
-	// Token(const TokenType type, const std::string& value,
-	// 	  const Position& pos_start, Position& pos_end);
 };

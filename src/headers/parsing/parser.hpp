@@ -1,17 +1,12 @@
 #pragma once
 
-#include "error.hpp"
+#include "../helpers/error.hpp"
+#include "../types/node.hpp"
+#include "../types/token.hpp"
 #include "lexer.hpp"
-#include "node.hpp"
-#include "response.hpp"
-#include "token.hpp"
 #include <optional>
 #include <stdexcept>
 
-// TODO -- Make a vector of tokens, if have an error, delete all, maybe use program for this
-// TODO -- or come back with normal parser
-
-// TODO -- If, tokenize had error, set parser.error = true, then check at the end of make_AST, if had, delete all and throw, can do the same with interpreter
 
 class Parser {
 	public:
@@ -27,7 +22,6 @@ class Parser {
 				delete lexer;
 		}
 
-		// const Response<const Program*> make_AST(File& file);
 		const Statement* make_AST();
 
 		

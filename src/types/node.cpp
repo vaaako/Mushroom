@@ -1,4 +1,4 @@
-#include "../headers/node.hpp"
+#include "../headers/types/node.hpp"
 
 // Normally I would just let this in node.hpp, but I'm putting here to not get messy
 // (since all header are in the same folder)

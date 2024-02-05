@@ -1,5 +1,5 @@
-#include "../headers/environment.hpp"
-#include "../headers/utils.hpp"
+#include "../headers/runtime/environment.hpp"
+#include "../headers/helpers/utils.hpp"
 #include <stdexcept>
 
 Environment::Environment(File& file, Environment* parent) : file(file), parent(parent) {

@@ -1,9 +1,9 @@
 #pragma once
 
-#include "environment.hpp"
-#include "node.hpp"
-#include "token.hpp"
-#include "values.hpp"
+#include "../runtime/environment.hpp"
+#include "../types/node.hpp"
+#include "../types/token.hpp"
+#include "../types/values.hpp"
 
 /**
  * DEBUG AREA */
@@ -15,11 +15,13 @@
 namespace Debug {
 	const std::string token(const Token&);
 	const std::string program(const Program& program);
-	const std::string value(const RuntimeVal& value, Environment* env=nullptr);
+	// const std::string value(const RuntimeVal& value, Environment* env=nullptr);
+	const std::string value(const RuntimeVal& value);
 	const std::string env(Environment& env);
 
 	const std::string get_node_value(const Statement& stmt);
-	const std::string runtimeValue_to_string_colorized(const RuntimeVal& value, Environment* env=nullptr);
+	// const std::string runtimeValue_to_string_colorized(const RuntimeVal& value, Environment* env=nullptr);
+	const std::string runtimeValue_to_string_colorized(const RuntimeVal& value);
 	
 
 	// const std::string debug_all(std::queue<const Token*> tokens);

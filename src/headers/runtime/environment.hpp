@@ -1,8 +1,8 @@
 #pragma once
 
-#include "error.hpp"
-#include "file.hpp"
-#include "values.hpp"
+#include "../helpers/error.hpp"
+#include "../helpers/file.hpp"
+#include "../types/values.hpp"
 #include <unordered_map>
 #include <unordered_set>
 

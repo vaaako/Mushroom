@@ -1,6 +1,6 @@
-#include "../headers/debug.hpp"
+#include "../headers/helpers/debug.hpp"
 
-#include "../headers/utils.hpp"
+#include "../headers/helpers/utils.hpp"
 #include <stdexcept>
 
 // const Debug::debug_all(std::queue<const Token *> tokens) {
@@ -49,8 +49,8 @@ const std::string Debug::program(const Program& program) {
 	return result;
 }
 
-const std::string Debug::value(const RuntimeVal& value, Environment* env) {
-	return "EVAL RESULT\n" + Debug::runtimeValue_to_string_colorized(value, env) + "\n";
+const std::string Debug::value(const RuntimeVal& value) {
+	return "EVAL RESULT\n" + Debug::runtimeValue_to_string_colorized(value) + "\n";
 }
 
 const std::string Debug::env(Environment& env) {
@@ -134,7 +134,7 @@ const std::string Debug::get_node_value(const Statement& stmt) {
 
 }
 
-const std::string Debug::runtimeValue_to_string_colorized(const RuntimeVal& value, Environment* env) {
+const std::string Debug::runtimeValue_to_string_colorized(const RuntimeVal& value) {
 	std::string result;
 
 	switch (value.type) {

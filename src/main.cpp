@@ -6,7 +6,7 @@
 #include <readline/history.h>
 
 #include "headers/mushroom.hpp"
-#include "headers/utils.hpp"
+#include "headers/helpers/utils.hpp"
 
 const bool DEBUG = true;
 

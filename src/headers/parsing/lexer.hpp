@@ -3,8 +3,8 @@
 #include <string>
 #include <unordered_set>
 #include <unordered_map>
-#include "file.hpp"
-#include "token.hpp"
+#include "../helpers/file.hpp"
+#include "../types/token.hpp"
 
 class Lexer {
 	public:

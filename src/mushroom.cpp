@@ -1,13 +1,12 @@
 #include "headers/mushroom.hpp"
-#include "headers/debug.hpp"
-#include "headers/environment.hpp"
-#include "headers/error.hpp"
-#include "headers/interpreter.hpp"
-#include "headers/lexer.hpp"
-#include "headers/file.hpp"
-#include "headers/node.hpp"
-#include "headers/parser.hpp"
-#include "headers/values.hpp"
+#include "headers/helpers/debug.hpp"
+#include "headers/helpers/error.hpp"
+#include "headers/helpers/file.hpp"
+#include "headers/runtime/environment.hpp"
+#include "headers/runtime/interpreter.hpp"
+#include "headers/parsing/lexer.hpp"
+#include "headers/parsing/parser.hpp"
+#include "headers/types/values.hpp"
 
 #include <iostream>
 #include <algorithm>
